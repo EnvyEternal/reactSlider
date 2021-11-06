@@ -1,31 +1,19 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
 
-export class Slide extends Component {
-    constructor(props){
-        super(props);
-        const img = new Image();
-        this.state= {
-            img,
-           
-        }
+function Slide({currentImage, width, height}) {
+    const [photo, setPhoto] = useState(new Image());
+    const load = () => {
+        //photo.src = currentImage.src;
+        setPhoto(currentImage);
     }
-    load = () => {
-        const {img} = this.state;
-        const {images: {src}} = this.props;
-        img.src = src;
-    }
-    componentDidMount(){ this.load(); }
-    render() {
-        const {img} = this.state;
-        const {cur, index} = this.props;
-        return (
+    //componentDidMount(){ this.load(); }
+    return(
             <div>
-                <img src={cur.src[index]}>
-                    
+                <img src={currentImage.src} alt="image" width={width} height={height}>
+                    <figcaption>{currentImage.title}</figcaption>
                 </img>                
             </div>
-        )
-    }
+    );
 }
 
 export default Slide;
