@@ -13,7 +13,8 @@ export default class Carousel extends Component {
         this.state = {
             index: 0,
             width: 0,
-            height: 0
+            height: 0,
+            
         };
     };
     setFullScreenMode = (isFullScreen) => {
@@ -37,11 +38,12 @@ export default class Carousel extends Component {
         this.setState({index: index-1})
     }
     render() {
-        const {index} = this.state;
+        
         const {slides} = this.props;
+        const {index} = this.state
         return (
             <div>
-                <Slide currentImage={{slides}[index]} />
+                <Slide currentImage={slides[index]}/>
                 <Slider next={this.setNextImage} prev={this.setPrevImage}  setFullScreenMode={this.setFullScreenMode} />                
             </div>
         );

@@ -6,7 +6,7 @@ export class Slide extends Component {
         const img = new Image();
         this.state= {
             img,
-            slides:'https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/46/2020/10/Space_1.jpg',
+           
         }
     }
     load = () => {
@@ -17,11 +17,11 @@ export class Slide extends Component {
     componentDidMount(){ this.load(); }
     render() {
         const {img} = this.state;
-        const {images} = this.props;
+        const {cur, index} = this.props;
         return (
             <div>
-                <img src={images.src}>
-                    <figcaption>{images.title}</figcaption>
+                <img src={cur.src[index]}>
+                    
                 </img>                
             </div>
         )

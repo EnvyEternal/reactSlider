@@ -12,7 +12,7 @@ const {slides} = [{
 },]
 
 const App = () => {
-  return(<Carousel  slides={slides}/>)
+  return(<Carousel slides={slides}/>)
 }
 
 export default App
