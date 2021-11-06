@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+
 import Slide from './Slide';
 import Slider from './Slider'
 
-const slides = {
+const {slides} = {
     src:'https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/46/2020/10/Space_1.jpg'
 }
 
@@ -40,7 +41,7 @@ export default class Carousel extends Component {
         const {slides} = this.props;
         return (
             <div>
-                <Slide currentImage={slides[index]} />
+                <Slide currentImage={{slides}[index]} />
                 <Slider next={this.setNextImage} prev={this.setPrevImage}  setFullScreenMode={this.setFullScreenMode} />                
             </div>
         );

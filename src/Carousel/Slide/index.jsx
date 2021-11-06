@@ -11,17 +11,17 @@ export class Slide extends Component {
     }
     load = () => {
         const {img} = this.state;
-        const {currentImage: {src}} = this.props;
+        const {images: {src}} = this.props;
         img.src = src;
     }
     componentDidMount(){ this.load(); }
     render() {
-        //const {img} = this.state;
-        const {currentImage} = this.props;
+        const {img} = this.state;
+        const {images} = this.props;
         return (
             <div>
-                <img src={currentImage.src}>
-                    <figcaption>{currentImage.title}</figcaption>
+                <img src={images.src}>
+                    <figcaption>{images.title}</figcaption>
                 </img>                
             </div>
         )
